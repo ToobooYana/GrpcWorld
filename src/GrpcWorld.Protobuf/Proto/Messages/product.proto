@@ -1,0 +1,20 @@
+﻿syntax = "proto3";
+
+package message;
+
+import "Proto/Messages/Category.proto";
+import "Proto/Messages/Supplier.proto";
+
+message Product {
+	int32 ProductId = 1;
+	string ProductName = 2;
+	string QuantityPerUnit = 3;
+	double UnitPrice = 4;
+	int32 UnitsInStock = 5;
+	int32 UnitsOnOrder = 6;
+	int32 ReorderLevel = 7;
+	bool Discontinued = 8;
+	string ProductImage = 9;
+	Category Category = 10;
+	Supplier Supplier = 11;
+}

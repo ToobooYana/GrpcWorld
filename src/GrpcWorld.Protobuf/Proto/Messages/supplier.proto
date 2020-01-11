@@ -1,0 +1,20 @@
+﻿syntax = "proto3";
+
+package message;
+
+option csharp_namespace = "GrpcWorld.Entities";
+
+message Supplier {
+	int32 SupplierId = 1;
+	string CompanyName = 2;
+	string ContactName = 3;
+	string ContactTitle = 4;
+	string Address = 5;
+	string City = 6;
+	string Region = 7;
+	string PostalCode = 8;
+	string Country = 9;
+	string Phone = 10;
+	string Fax = 11;
+	string HomePage = 12;
+}

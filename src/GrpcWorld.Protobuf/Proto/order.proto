@@ -1,0 +1,29 @@
+﻿syntax = "proto3";
+
+import "Proto/Messages/Product.proto";
+import "google/protobuf/empty.proto";
+
+
+package services;
+
+service Order {
+	rpc GetAllProducts (GetAllProductRequest) returns (GetAllProductResponse);
+	rpc GetProduct (GetProductRequest) returns (GetProductResponse);
+	rpc Ping (google.protobuf.Empty) returns (google.protobuf.Empty);
+} 
+
+message GetAllProductRequest {
+	int32 count = 1;
+}
+
+message GetAllProductResponse {
+	repeated message.Product Products = 1; 
+}
+
+message GetProductRequest {
+	int32 ProductId = 1;
+}
+
+message GetProductResponse {
+	.message.Product Product = 1; 
+}

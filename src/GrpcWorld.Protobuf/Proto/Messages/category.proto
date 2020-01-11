@@ -1,0 +1,13 @@
+﻿syntax = "proto3";
+
+package message;
+
+option csharp_namespace = "GrpcWorld.Entities";
+
+
+
+message Category {
+	int32 Id = 1;
+	string CategoryName = 2;
+	string Description = 3;
+}

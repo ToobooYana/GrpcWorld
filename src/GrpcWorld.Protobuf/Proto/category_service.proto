@@ -1,0 +1,35 @@
+﻿syntax = "proto3";
+
+import "Proto/Messages/Category.proto";
+
+package services;
+
+service Categories {
+	rpc GetAllCategories (GetAllCategoriesRequest) 
+		returns (GetAllCategoriesResponse);
+
+	rpc GetAllCategoriesWithStream (GetAllCategoriesRequest) returns (stream GetAllCategoriesWithStreamResponse);
+
+	rpc CreateNewCategory(stream CreateNewCategoryRequest) returns (stream CreateNewCategoryResponse);
+} 
+
+message GetAllCategoriesRequest {
+	int32 count = 1;
+}
+
+message GetAllCategoriesResponse {
+	repeated .message.Category Categories = 1; 
+}
+
+message GetAllCategoriesWithStreamResponse {
+	.message.Category Category = 1; 
+}
+
+message CreateNewCategoryRequest {
+	string CategoryName = 1;
+	string Description = 2;
+}
+
+message CreateNewCategoryResponse {
+	int32 CategoryId = 1;
+}
